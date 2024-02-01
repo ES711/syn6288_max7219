@@ -25,6 +25,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "syn6288.h"
+#include "string.h"
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -70,8 +72,9 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
+	//uint8_t test[] = {0xD3, 0xEE, 0xD2, 0xF4, 0xCC, 0xEC, 0xCF, 0xC2};
+  uint8_t test[] = {0x5b,0x76,0x36,0x5d,0x5b,0x6d,0x30,0x5d,0x5b,0x74,0x35,0x5d,0xdb,0x60,0xae,0x78,0xac,0x4f,0xae,0xfc,0xb0,0x5c};
+	/* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -94,16 +97,15 @@ int main(void)
   MX_SPI1_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-	
   /* USER CODE END 2 */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 		
-		SYN_FrameInfo(0, (uint8_t*)"[v5][m0][t3]test");
-    HAL_Delay(3000);
+		//SYN_FrameInfo(0, (uint8_t*)"[v7][m1][t5]0xD3 0xEE 0xD2 0xF4 0xCC 0xEC 0xCF 0xC2");
+		SYN_FrameInfo(0, test);
+		HAL_Delay(8000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
