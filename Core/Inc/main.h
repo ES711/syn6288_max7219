@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define Max7219_8x8_Pin GPIO_PIN_13
+#define Max7219_8x8_GPIO_Port GPIOF
 
 /* USER CODE BEGIN Private defines */
 
